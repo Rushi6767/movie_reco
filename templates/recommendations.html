@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+        .recommendations-list {
+            margin: 30px 0;
+            padding: 0;
+        }
+        .recommendations-list ol {
+            padding-left: 20px;
+        }
+        .recommendations-list li {
+            padding: 10px 0;
+            font-size: 16px;
+            border-bottom: 1px solid #eee;
+        }
+        .recommendations-list li:last-child {
+            border-bottom: none;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recommendations for "{{ movie_name }}"</h1>
+        
+        <div class="recommendations-list">
+            <ol>
+                {% for movie in recommendations %}
+                <li>{{ movie }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
